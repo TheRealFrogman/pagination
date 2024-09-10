@@ -1,0 +1,26 @@
+{
+   "name": "array-pager",
+   "version": "1.0.2",
+   "description": "",
+   "main": "index.js",
+   "exports": "./index.js",
+   "types": "./index.d.ts",
+   "scripts": {
+      "test": "node --env-file=.env --test --experimental-test-coverage",
+      "build": "powershell -Command \"npm i; npm run clean; npm run compile; npm run copy-assets\"",
+      "clean": "powershell -Command \"if (Test-Path -Path out) { Remove-Item -Path out -Recurse -Force }\"",
+      "compile": "tsc --outDir ./out --rootDir ./  --noUnusedLocals --noUnusedParameters",
+      "copy-assets": "powershell -Command \"New-Item -ItemType Directory -Force -Path out | Out-Null; Copy-Item -Path ./package.json -Destination out -Recurse -Container -ErrorAction SilentlyContinue\"; cd out; npm i; cd .."
+   },
+   "keywords": [],
+   "author": "",
+   "license": "ISC",
+   "devDependencies": {
+      "@types/node": "^20.12.12",
+      "ts-node": "^10.9.2",
+      "typescript": "^5.5.4"
+   },
+   "dependencies": {
+      "pagination": "file:"
+   }
+}
