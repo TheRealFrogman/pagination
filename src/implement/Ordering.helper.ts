@@ -1,4 +1,4 @@
-import { OrderBy } from "../core/OrderBy.type";
+import { OrderBy } from "../core/OrderBy.type.js";
 
 export function orderBy<T extends object>(unorderedData: T[], orderParams: OrderBy<T>) {
    if (typeof unorderedData[0][orderParams.field] === 'number') {

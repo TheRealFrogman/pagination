@@ -1,8 +1,8 @@
-import { OrderBy } from "../core/OrderBy.type";
-import { Paginated } from "../core/Paginated";
-import { Pagination_QueryParams } from "../core/PaginatedQueryParams.type";
-import { Carriage } from "./Carriage";
-import { orderBy } from "./Ordering.helper";
+import { OrderBy } from "../core/OrderBy.type.js";
+import { Paginated } from "../core/Paginated.js";
+import { Pagination_QueryParams } from "../core/PaginatedQueryParams.type.js";
+import { Carriage } from "./Carriage.js";
+import { orderBy } from "./Ordering.helper.js";
 
 export function paginate<T extends object>(
    params: Pagination_QueryParams & { orderBy: OrderBy<T> | null },

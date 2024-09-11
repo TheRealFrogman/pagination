@@ -5,22 +5,39 @@
    "main": "index.js",
    "exports": "./index.js",
    "types": "./index.d.ts",
+   "type": "module",
    "scripts": {
-      "test": "node --env-file=.env --test --experimental-test-coverage",
-      "build": "powershell -Command \"npm i; npm run clean; npm run compile; npm run copy-assets\"",
-      "clean": "powershell -Command \"if (Test-Path -Path out) { Remove-Item -Path out -Recurse -Force }\"",
-      "compile": "tsc --outDir ./out --rootDir ./  --noUnusedLocals --noUnusedParameters",
-      "copy-assets": "powershell -Command \"New-Item -ItemType Directory -Force -Path out | Out-Null; Copy-Item -Path ./package.json -Destination out -Recurse -Container -ErrorAction SilentlyContinue\"; cd out; npm i; cd .."
+      "build": "rollup -c",
+      "compile": "tsc",
+      "clean": "powershell -Command \"if (Test-Path -Path dist) { Remove-Item -Path dist -Recurse -Force }\"",
+      "prepublishOnly": "npm run build"
    },
    "keywords": [],
    "author": "",
    "license": "ISC",
    "devDependencies": {
+      "@rollup/plugin-node-resolve": "^15.2.3",
+      "@rollup/plugin-typescript": "^11.1.6",
       "@types/node": "^20.12.12",
+      "rollup": "^2.79.1",
+      "rollup-plugin-terser": "^7.0.2",
       "ts-node": "^10.9.2",
       "typescript": "^5.5.4"
    },
    "dependencies": {
-      "pagination": "file:"
+      "array-pager": "file:",
+      "pagination": "file:",
+      "tslib": "^2.6.2"
+   },
+   "browser": {
+      "extends": "./tsconfig.json",
+      "compilerOptions": {
+         "module": "ES6",
+         "outDir": "./dist/browser",
+         "target": "ES6"
+      },
+      "include": [
+         "browser.ts"
+      ]
    }
 }
