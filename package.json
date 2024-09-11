@@ -9,8 +9,7 @@
    "scripts": {
       "build": "rollup -c",
       "compile": "tsc",
-      "clean": "powershell -Command \"if (Test-Path -Path dist) { Remove-Item -Path dist -Recurse -Force }\"",
-      "prepublishOnly": "npm run build"
+      "clean": "powershell -Command \"if (Test-Path -Path dist) { Remove-Item -Path dist -Recurse -Force }\""
    },
    "keywords": [],
    "author": "",

@@ -5,8 +5,8 @@ import { Carriage } from "./Carriage.js";
 import { orderBy } from "./Ordering.helper.js";
 
 export function paginate<T extends object>(
+   dataToPaginate: readonly T[],
    params: Pagination_QueryParams & { orderBy: OrderBy<T> | null },
-   dataToPaginate: readonly T[]
 ): Paginated<T> {
    const { limit, current_page, offset } = params;
 

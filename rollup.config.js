@@ -6,13 +6,13 @@ export default {
    input: "index.ts",
    output: [
       {
-         file: "dist/array-pager.js",
+         file: "out/array-pager.js",
          format: "umd",
          name: "ArrayPager",
          sourcemap: true,
       },
       {
-         file: "dist/array-pager.min.js",
+         file: "out/array-pager.min.js",
          format: "umd",
          name: "ArrayPager",
          plugins: [terser()],
