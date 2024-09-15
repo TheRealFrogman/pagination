@@ -6,18 +6,19 @@ export default {
    input: "index.ts",
    output: [
       {
-         file: "out/array-pager.js",
-         format: "umd",
+         file: "out/index.js",
+         format: "es",
          name: "ArrayPager",
          sourcemap: true,
       },
+      
       {
-         file: "out/array-pager.min.js",
-         format: "umd",
+         file: "out/index.min.js",
+         format: "es",
          name: "ArrayPager",
          plugins: [terser()],
          sourcemap: true,
       },
    ],
-   plugins: [typescript(), nodeResolve()],
+   plugins: [typescript({ tsconfig: "./tsconfig.json" }), nodeResolve()],
 };

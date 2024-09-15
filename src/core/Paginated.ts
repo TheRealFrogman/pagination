@@ -2,7 +2,7 @@ export class Paginated<T> {
    readonly count: number;
    readonly limit: number;
    readonly page: number;
-   readonly data: readonly T[];
+   readonly data: T[];
    readonly total_pages: number;
 
    constructor(props: Paginated<T>) {

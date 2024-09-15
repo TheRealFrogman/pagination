@@ -5,7 +5,7 @@ import { orderBy } from '../src/implement/Ordering.helper';
 describe('orderBy function', () => {
    it('should sort numbers in ascending order', () => {
       const data = [{ id: 3, value: 10 }, { id: 1, value: 5 }, { id: 2, value: 8 }];
-      const sortedData = orderBy(data, { field: 'value', param: 'ascending' });
+      const sortedData = orderBy(data, { field: 'value', direction: 'ascending' });
       assert.deepEqual(sortedData, [
          { id: 1, value: 5 },
          { id: 2, value: 8 },
@@ -15,7 +15,7 @@ describe('orderBy function', () => {
 
    it('should sort numbers in descending order', () => {
       const data = [{ id: 3, value: 10 }, { id: 1, value: 5 }, { id: 2, value: 8 }];
-      const sortedData = orderBy(data, { field: 'value', param: 'descending' });
+      const sortedData = orderBy(data, { field: 'value', direction: 'descending' });
       assert.deepEqual(sortedData, [
          { id: 3, value: 10 },
          { id: 2, value: 8 },
@@ -25,7 +25,7 @@ describe('orderBy function', () => {
 
    it('should sort strings in ascending order', () => {
       const data = [{ id: 3, name: 'Charlie' }, { id: 1, name: 'Alice' }, { id: 2, name: 'Bob' }];
-      const sortedData = orderBy(data, { field: 'name', param: 'ascending' });
+      const sortedData = orderBy(data, { field: 'name', direction: 'ascending' });
       assert.deepEqual(sortedData, [
          { id: 1, name: 'Alice' },
          { id: 2, name: 'Bob' },
@@ -35,7 +35,7 @@ describe('orderBy function', () => {
 
    it('should sort strings in descending order', () => {
       const data = [{ id: 3, name: 'Charlie' }, { id: 1, name: 'Alice' }, { id: 2, name: 'Bob' }];
-      const sortedData = orderBy(data, { field: 'name', param: 'descending' });
+      const sortedData = orderBy(data, { field: 'name', direction: 'descending' });
       assert.deepEqual(sortedData, [
          { id: 3, name: 'Charlie' },
          { id: 2, name: 'Bob' },
@@ -45,7 +45,7 @@ describe('orderBy function', () => {
 
    it('should return original data if field type is not supported', () => {
       const data = [{ id: 1, isActive: true }];
-      const sortedData = orderBy(data, { field: 'isActive', param: 'ascending' });
+      const sortedData = orderBy(data, { field: 'isActive', direction: 'ascending' });
       assert.deepEqual(sortedData, data);
    });
 });

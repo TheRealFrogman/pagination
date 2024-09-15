@@ -1,6 +1,6 @@
 {
    "name": "array-pager",
-   "version": "1.0.2",
+   "version": "2.0.4",
    "description": "",
    "main": "index.js",
    "exports": "./index.js",
@@ -11,7 +11,17 @@
       "compile": "tsc",
       "clean": "powershell -Command \"if (Test-Path -Path dist) { Remove-Item -Path dist -Recurse -Force }\""
    },
-   "keywords": [],
+   "keywords": [
+      "pagination",
+      "simple",
+      "array",
+      "pager",
+      "paginated",
+      "paginated-array",
+      "paginated-data",
+      "pagination-data",
+      "pagination-helper"
+   ],
    "author": "",
    "license": "ISC",
    "devDependencies": {

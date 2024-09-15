@@ -1,1 +1,1 @@
-export type OrderBy<O extends object> = { field: keyof O; param: 'ascending' | 'descending' };
+export type OrderBy<O extends object> = { field: keyof O; direction: 'ascending' | 'descending' };
